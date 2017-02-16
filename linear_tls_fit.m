@@ -1,0 +1,25 @@
+xx=[x3;x4];
+yy=[y3;y4];
+plot(xx,yy);
+y_tls=0.8874.*xx;
+hold on;
+plot(xx,y_tls);
+XY=[xx,yy];
+hold on;
+A=EllipseDirectFit(XY);
+a = num2str(A(1)); 
+b = num2str(A(2)); 
+c = num2str(A(3)); 
+d = num2str(A(4)); 
+e = num2str(A(5)); 
+f = num2str(A(6));
+aa = str2double(a);
+bb = str2double(b)/2; 
+cc = str2double(c); 
+dd = str2double(d)/2; 
+ff = str2double(e)/2; 
+gg = str2double(f);
+ eqt= ['(',a, ')*x^2 + (',b,')*x*y + (',c,')*y^2 + (',d,')*x+ (',e,')*y + (',f,')']; 
+xmin=-0.1; 
+xmax=0.2; 
+ezplot(eqt,[xmin,xmax]) 
